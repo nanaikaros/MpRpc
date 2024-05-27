@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Project/MpRpc/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/mprpc.dir/main.cpp.o -c /Project/MpRpc/main.cpp",
+  "file": "/Project/MpRpc/main.cpp",
+  "output": "CMakeFiles/mprpc.dir/main.cpp.o"
+}
+]
