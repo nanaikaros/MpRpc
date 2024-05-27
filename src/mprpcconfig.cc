@@ -41,7 +41,7 @@ void MpRpcConfig::LoadConfigFile(const char* config_file) {
     key = src_buf.substr(0, idx);
     value = src_buf.substr(idx + 1, src_buf.size() - idx);
 
-    m_configMap.insert(key, value);
+    m_configMap[key] = value;
   }
 }
 
