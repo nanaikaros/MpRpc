@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
+  "/Project/MpRpc/bin/mprpc"
+  "/Project/MpRpc/bin/mprpc.pdb"
   "CMakeFiles/mprpc.dir/main.cpp.o"
   "CMakeFiles/mprpc.dir/main.cpp.o.d"
-  "mprpc"
-  "mprpc.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

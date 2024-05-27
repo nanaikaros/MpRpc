@@ -1,8 +1,26 @@
 [
 {
-  "directory": "/Project/MpRpc/build",
-  "command": "/usr/bin/g++   -g -o CMakeFiles/mprpc.dir/main.cpp.o -c /Project/MpRpc/main.cpp",
-  "file": "/Project/MpRpc/main.cpp",
-  "output": "CMakeFiles/mprpc.dir/main.cpp.o"
+  "directory": "/Project/MpRpc/build/example/Callee",
+  "command": "/usr/bin/g++  -I/Project/MpRpc/src/include -I/Project/MpRpc/example -g -o CMakeFiles/provider.dir/userservice.cc.o -c /Project/MpRpc/example/Callee/userservice.cc",
+  "file": "/Project/MpRpc/example/Callee/userservice.cc",
+  "output": "example/Callee/CMakeFiles/provider.dir/userservice.cc.o"
+},
+{
+  "directory": "/Project/MpRpc/build/example/Callee",
+  "command": "/usr/bin/g++  -I/Project/MpRpc/src/include -I/Project/MpRpc/example -g -o CMakeFiles/provider.dir/__/user.pb.cc.o -c /Project/MpRpc/example/user.pb.cc",
+  "file": "/Project/MpRpc/example/user.pb.cc",
+  "output": "example/Callee/CMakeFiles/provider.dir/__/user.pb.cc.o"
+},
+{
+  "directory": "/Project/MpRpc/build/src",
+  "command": "/usr/bin/g++ -Dmprpc_EXPORTS -I/Project/MpRpc/src/include -I/Project/MpRpc/example -g -fPIC -o CMakeFiles/mprpc.dir/mprpcapplication.cc.o -c /Project/MpRpc/src/mprpcapplication.cc",
+  "file": "/Project/MpRpc/src/mprpcapplication.cc",
+  "output": "src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o"
+},
+{
+  "directory": "/Project/MpRpc/build/src",
+  "command": "/usr/bin/g++ -Dmprpc_EXPORTS -I/Project/MpRpc/src/include -I/Project/MpRpc/example -g -fPIC -o CMakeFiles/mprpc.dir/rpcprovider.cc.o -c /Project/MpRpc/src/rpcprovider.cc",
+  "file": "/Project/MpRpc/src/rpcprovider.cc",
+  "output": "src/CMakeFiles/mprpc.dir/rpcprovider.cc.o"
 }
 ]
