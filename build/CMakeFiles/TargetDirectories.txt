@@ -11,6 +11,11 @@
 /Project/MpRpc/build/example/Callee/CMakeFiles/package_source.dir
 /Project/MpRpc/build/example/Callee/CMakeFiles/edit_cache.dir
 /Project/MpRpc/build/example/Callee/CMakeFiles/rebuild_cache.dir
+/Project/MpRpc/build/example/Caller/CMakeFiles/consumer.dir
+/Project/MpRpc/build/example/Caller/CMakeFiles/package.dir
+/Project/MpRpc/build/example/Caller/CMakeFiles/package_source.dir
+/Project/MpRpc/build/example/Caller/CMakeFiles/edit_cache.dir
+/Project/MpRpc/build/example/Caller/CMakeFiles/rebuild_cache.dir
 /Project/MpRpc/build/src/CMakeFiles/mprpc.dir
 /Project/MpRpc/build/src/CMakeFiles/package.dir
 /Project/MpRpc/build/src/CMakeFiles/package_source.dir

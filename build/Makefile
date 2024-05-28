@@ -150,6 +150,19 @@ provider/fast:
 .PHONY : provider/fast
 
 #=============================================================================
+# Target rules for targets named consumer
+
+# Build rule for target.
+consumer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 consumer
+.PHONY : consumer
+
+# fast build rule for target.
+consumer/fast:
+	$(MAKE) $(MAKESILENT) -f example/Caller/CMakeFiles/consumer.dir/build.make example/Caller/CMakeFiles/consumer.dir/build
+.PHONY : consumer/fast
+
+#=============================================================================
 # Target rules for targets named mprpc
 
 # Build rule for target.
@@ -172,6 +185,7 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
+	@echo "... consumer"
 	@echo "... mprpc"
 	@echo "... provider"
 .PHONY : help

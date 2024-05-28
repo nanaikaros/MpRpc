@@ -15,41 +15,48 @@ void MpRpcConfig::LoadConfigFile(const char* config_file) {
     fgets(buf, 512, pf);
 
     // 去掉空格
-    std::string src_buf(buf);
-    int idx = src_buf.find_first_not_of(' ');
-    if (idx != -1) {
-      src_buf = src_buf.substr(idx, src_buf.size() - idx);
-    }
+    std::string read_buf(buf);
+    Trim(read_buf);
 
-    idx = src_buf.find_last_not_of(' ');
-    if (idx != -1) {
-      src_buf = src_buf.substr(0, idx + 1);
-    }
-
-    if (src_buf[0] == '#' || src_buf.empty()) {
+    if (read_buf[0] == '#' || read_buf.empty()) {
       continue;
     }
 
     // 解析配置项
-    idx = src_buf.find('=');
+    int idx = read_buf.find('=');
     if (idx == -1) {
       continue;
     }
 
     std::string key;
     std::string value;
-    key = src_buf.substr(0, idx);
-    value = src_buf.substr(idx + 1, src_buf.size() - idx);
+    key = read_buf.substr(0, idx);
+    Trim(key);
+    int endidx = read_buf.find('\n', idx);
+    value = read_buf.substr(idx + 1, endidx - idx - 1);
+    Trim(value);
 
     m_configMap[key] = value;
   }
 }
 
 // 查询配置项
-std::string MpRpcConfig::Load(std::string& key) {
+std::string MpRpcConfig::Load(const char* key) {
   auto it = m_configMap.find(key);
   if (it == m_configMap.end()) {
     return "";
   }
   return it->second;
+}
+
+void MpRpcConfig::Trim(std::string& src_buf) {
+  int idx = src_buf.find_first_not_of(' ');
+  if (idx != -1) {
+    src_buf = src_buf.substr(idx, src_buf.size() - idx);
+  }
+
+  idx = src_buf.find_last_not_of(' ');
+  if (idx != -1) {
+    src_buf = src_buf.substr(0, idx + 1);
+  }
 }

@@ -19,7 +19,7 @@ void MpRpcApplication::Init(int argc, char** argv) {
 
   int c = 0;
   std::string config_file;
-  while ((c = getopt(argc, argv, "i:") != -1)) {
+  while ((c = getopt(argc, argv, "i:")) != -1) {
     switch (c) {
       case 'i':
         config_file = optarg;
@@ -31,12 +31,19 @@ void MpRpcApplication::Init(int argc, char** argv) {
         ShowArgsHelp();
         exit(EXIT_FAILURE);
       default:
+        std::cerr << "Unexpected option: '" << char(optopt) << "' with value '"
+                  << (optarg ? optarg : "") << "'\n";
         break;
     }
   }
 
   // 开始加载配置模块
   m_config.LoadConfigFile(config_file.c_str());
+  std::cout << "rpcserverip: ";
+  std::cout << m_config.Load("rpcserverip") << std::endl;
+  std::cout << "rpcserverport: ";
+  std::cout << m_config.Load("rpcserverport") << std::endl;
+  ;
 }
 
 MpRpcApplication& MpRpcApplication::GetInstance() {

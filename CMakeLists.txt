@@ -3,7 +3,7 @@ project(mprpc VERSION 0.1.0 LANGUAGES C CXX)
 
 #include(CTest)
 #enable_testing()
-
+#set(CMAKE_BULID_TYPE DEBUG)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

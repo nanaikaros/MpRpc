@@ -8,6 +8,7 @@ class MpRpcApplication {
  public:
   static void Init(int argc, char** argv);
   static MpRpcApplication& GetInstance();
+  static MpRpcConfig& GetConfig() { return m_config; };
 
  private:
   static MpRpcConfig m_config;

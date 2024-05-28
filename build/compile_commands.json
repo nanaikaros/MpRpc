@@ -12,20 +12,44 @@
   "output": "example/Callee/CMakeFiles/provider.dir/__/user.pb.cc.o"
 },
 {
+  "directory": "/Project/MpRpc/build/example/Caller",
+  "command": "/usr/bin/g++  -I/Project/MpRpc/src/include -I/Project/MpRpc/example -g -o CMakeFiles/consumer.dir/calluserService.cc.o -c /Project/MpRpc/example/Caller/calluserService.cc",
+  "file": "/Project/MpRpc/example/Caller/calluserService.cc",
+  "output": "example/Caller/CMakeFiles/consumer.dir/calluserService.cc.o"
+},
+{
+  "directory": "/Project/MpRpc/build/example/Caller",
+  "command": "/usr/bin/g++  -I/Project/MpRpc/src/include -I/Project/MpRpc/example -g -o CMakeFiles/consumer.dir/__/user.pb.cc.o -c /Project/MpRpc/example/user.pb.cc",
+  "file": "/Project/MpRpc/example/user.pb.cc",
+  "output": "example/Caller/CMakeFiles/consumer.dir/__/user.pb.cc.o"
+},
+{
   "directory": "/Project/MpRpc/build/src",
-  "command": "/usr/bin/g++ -Dmprpc_EXPORTS -I/Project/MpRpc/src/include -I/Project/MpRpc/example -g -fPIC -o CMakeFiles/mprpc.dir/mprpcapplication.cc.o -c /Project/MpRpc/src/mprpcapplication.cc",
+  "command": "/usr/bin/g++  -I/Project/MpRpc/src/include -I/Project/MpRpc/example -g -o CMakeFiles/mprpc.dir/mprpcapplication.cc.o -c /Project/MpRpc/src/mprpcapplication.cc",
   "file": "/Project/MpRpc/src/mprpcapplication.cc",
   "output": "src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o"
 },
 {
   "directory": "/Project/MpRpc/build/src",
-  "command": "/usr/bin/g++ -Dmprpc_EXPORTS -I/Project/MpRpc/src/include -I/Project/MpRpc/example -g -fPIC -o CMakeFiles/mprpc.dir/mprpcconfig.cc.o -c /Project/MpRpc/src/mprpcconfig.cc",
+  "command": "/usr/bin/g++  -I/Project/MpRpc/src/include -I/Project/MpRpc/example -g -o CMakeFiles/mprpc.dir/mprpcchannel.cc.o -c /Project/MpRpc/src/mprpcchannel.cc",
+  "file": "/Project/MpRpc/src/mprpcchannel.cc",
+  "output": "src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o"
+},
+{
+  "directory": "/Project/MpRpc/build/src",
+  "command": "/usr/bin/g++  -I/Project/MpRpc/src/include -I/Project/MpRpc/example -g -o CMakeFiles/mprpc.dir/mprpcconfig.cc.o -c /Project/MpRpc/src/mprpcconfig.cc",
   "file": "/Project/MpRpc/src/mprpcconfig.cc",
   "output": "src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o"
 },
 {
   "directory": "/Project/MpRpc/build/src",
-  "command": "/usr/bin/g++ -Dmprpc_EXPORTS -I/Project/MpRpc/src/include -I/Project/MpRpc/example -g -fPIC -o CMakeFiles/mprpc.dir/rpcprovider.cc.o -c /Project/MpRpc/src/rpcprovider.cc",
+  "command": "/usr/bin/g++  -I/Project/MpRpc/src/include -I/Project/MpRpc/example -g -o CMakeFiles/mprpc.dir/rpcheader.pb.cc.o -c /Project/MpRpc/src/rpcheader.pb.cc",
+  "file": "/Project/MpRpc/src/rpcheader.pb.cc",
+  "output": "src/CMakeFiles/mprpc.dir/rpcheader.pb.cc.o"
+},
+{
+  "directory": "/Project/MpRpc/build/src",
+  "command": "/usr/bin/g++  -I/Project/MpRpc/src/include -I/Project/MpRpc/example -g -o CMakeFiles/mprpc.dir/rpcprovider.cc.o -c /Project/MpRpc/src/rpcprovider.cc",
   "file": "/Project/MpRpc/src/rpcprovider.cc",
   "output": "src/CMakeFiles/mprpc.dir/rpcprovider.cc.o"
 }

@@ -8,8 +8,9 @@ class MpRpcConfig {
  public:
   void LoadConfigFile(const char* config_file);
   // 查询配置项
-  std::string Load(std::string& key);
+  std::string Load(const char* key);
 
  private:
   std::unordered_map<std::string, std::string> m_configMap;
+  void Trim(std::string& src_buf);
 };
