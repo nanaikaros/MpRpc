@@ -25,6 +25,12 @@
 },
 {
   "directory": "/Project/MpRpc/build/src",
+  "command": "/usr/bin/g++  -I/Project/MpRpc/src/include -I/Project/MpRpc/example -g -o CMakeFiles/mprpc.dir/logger.cc.o -c /Project/MpRpc/src/logger.cc",
+  "file": "/Project/MpRpc/src/logger.cc",
+  "output": "src/CMakeFiles/mprpc.dir/logger.cc.o"
+},
+{
+  "directory": "/Project/MpRpc/build/src",
   "command": "/usr/bin/g++  -I/Project/MpRpc/src/include -I/Project/MpRpc/example -g -o CMakeFiles/mprpc.dir/mprpcapplication.cc.o -c /Project/MpRpc/src/mprpcapplication.cc",
   "file": "/Project/MpRpc/src/mprpcapplication.cc",
   "output": "src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o"
@@ -40,6 +46,12 @@
   "command": "/usr/bin/g++  -I/Project/MpRpc/src/include -I/Project/MpRpc/example -g -o CMakeFiles/mprpc.dir/mprpcconfig.cc.o -c /Project/MpRpc/src/mprpcconfig.cc",
   "file": "/Project/MpRpc/src/mprpcconfig.cc",
   "output": "src/CMakeFiles/mprpc.dir/mprpcconfig.cc.o"
+},
+{
+  "directory": "/Project/MpRpc/build/src",
+  "command": "/usr/bin/g++  -I/Project/MpRpc/src/include -I/Project/MpRpc/example -g -o CMakeFiles/mprpc.dir/mprpccontroller.cc.o -c /Project/MpRpc/src/mprpccontroller.cc",
+  "file": "/Project/MpRpc/src/mprpccontroller.cc",
+  "output": "src/CMakeFiles/mprpc.dir/mprpccontroller.cc.o"
 },
 {
   "directory": "/Project/MpRpc/build/src",

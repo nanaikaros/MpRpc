@@ -327,6 +327,7 @@ example/Caller/CMakeFiles/consumer.dir/calluserService.cc.o
  /Project/MpRpc/src/include/mprpcchannel.h
  /Project/MpRpc/src/include/mprpcconfig.h
  /Project/MpRpc/example/user.pb.h
+ /Project/MpRpc/src/include/mprpccontroller.h
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h
  /usr/include/asm-generic/errno.h

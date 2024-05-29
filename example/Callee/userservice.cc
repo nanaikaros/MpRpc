@@ -5,6 +5,7 @@
 
 #include "../src/include/mprpcapplication.h"
 #include "../src/include/rpcprovider.h"
+#include "logger.h"
 #include "user.pb.h"
 
 // UserService 是一个本地服务，提供了两个进程内的本地方法Login和GetFriendLists
@@ -14,6 +15,12 @@ class UserService : public fixbug::UserServiceRpc {
   bool Login(std::string name, std::string pwd) {
     spdlog::info("Doing local service: Login");
     spdlog::info("Name:" + name + " pwd:" + pwd);
+    return true;
+  }
+
+  bool Register(uint32_t id, std::string name, std::string pwd) {
+    spdlog::info("Doing local service: Register");
+    // spdlog::info("id" + std::to_string(id) + "Name" + name + "pwd:" + pwd);
     return true;
   }
 
@@ -39,9 +46,27 @@ class UserService : public fixbug::UserServiceRpc {
     // 4.做回调操作,执行响应对象数据的序列化和网络发送（都是由框架完成）
     done->Run();
   }
+
+  void Register(::google::protobuf::RpcController* controller,
+                const ::fixbug::RegisterRequest* request,
+                ::fixbug::RegisterResponse* response,
+                ::google::protobuf::Closure* done) {
+    uint32_t id = request->id();
+    std::string name = request->name();
+    std::string pwd = request->pwd();
+
+    bool ret = Register(id, name, pwd);
+
+    response->mutable_result()->set_errcode(0);
+    response->mutable_result()->set_errmsg("");
+    response->set_success(ret);
+
+    done->Run();
+  }
 };
 
 int main(int argc, char** argv) {
+  LOG_INFO("test log!");
   // 框架初始化 provider -i conf
   MpRpcApplication::Init(argc, argv);
 

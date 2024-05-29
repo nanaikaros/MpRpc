@@ -281,6 +281,7 @@ src/CMakeFiles/mprpc.dir/mprpcchannel.cc.o: \
  /usr/include/linux/close_range.h \
  /Project/MpRpc/src/include/mprpcapplication.h \
  /Project/MpRpc/src/include/mprpcconfig.h \
+ /Project/MpRpc/src/include/mprpccontroller.h \
  /Project/MpRpc/src/include/rpcheader.pb.h \
  /usr/local/include/google/protobuf/extension_set.h \
  /usr/include/c++/13/cassert

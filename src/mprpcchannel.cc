@@ -9,6 +9,7 @@
 #include <string>
 
 #include "mprpcapplication.h"
+#include "mprpccontroller.h"
 #include "rpcheader.pb.h"
 void MpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
                               google::protobuf::RpcController* controller,
@@ -41,6 +42,7 @@ void MpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     header_size = rpc_header_str.size();
   } else {
     std::cout << "serialize header error" << std::endl;
+    controller->SetFailed("serialize header error");
     return;
   }
 

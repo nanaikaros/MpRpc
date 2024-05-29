@@ -325,6 +325,7 @@ example/Caller/CMakeFiles/consumer.dir/calluserService.cc.o: /Project/MpRpc/exam
   /Project/MpRpc/src/include/mprpcchannel.h \
   /Project/MpRpc/src/include/mprpcconfig.h \
   /Project/MpRpc/example/user.pb.h \
+  /Project/MpRpc/src/include/mprpccontroller.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -1116,6 +1117,8 @@ example/Caller/CMakeFiles/consumer.dir/calluserService.cc.o: /Project/MpRpc/exam
 /usr/include/c++/13/bits/stream_iterator.h:
 
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
+
+/Project/MpRpc/src/include/mprpccontroller.h:
 
 /usr/local/include/google/protobuf/stubs/once.h:
 
