@@ -35,8 +35,10 @@ void RpcProvider::NotifyService(google::protobuf::Service* service) {
 void RpcProvider::Run() {
   std::string ip =
       MpRpcApplication::GetInstance().GetConfig().Load("rpcserverip");
-  uint16_t port = atoi(
-      MpRpcApplication::GetInstance().GetConfig().Load("rpcserverip").c_str());
+  uint16_t port = atoi(MpRpcApplication::GetInstance()
+                           .GetConfig()
+                           .Load("rpcserverport")
+                           .c_str());
   muduo::net::InetAddress address(ip, port);
 
   // 创建Tcpserver对象
@@ -76,7 +78,7 @@ std::string   insert和copy方法
 void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr& conn,
                             muduo::net::Buffer* buffer, muduo::Timestamp) {
   // 网络上接收的远程rpc调用请求的字符流
-  std::string recv_buf = buffer->retrieveAllAsString();
+  std::string recv_buf(buffer->retrieveAllAsString());
   // std::cout << "recv buffer: " << recv_buf << std::endl;
   //  读取前面四个字节的内容
   uint32_t header_size = 0;

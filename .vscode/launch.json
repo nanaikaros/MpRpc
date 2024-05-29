@@ -28,7 +28,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "/Project/MpRpc/bin/provider",
-            "args": [],
+            "args": ["-i","/Project/MpRpc/bin/test.conf"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],

@@ -50,6 +50,8 @@ void MpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
   send_rpc_str += rpc_header_str;
   send_rpc_str += args_str;
 
+  // std::cout << send_rpc_str << std::endl;
+
   // 打印调试信息
   std::cout << "============================================" << std::endl;
   std::cout << "header_size: " << header_size << std::endl;
@@ -69,13 +71,15 @@ void MpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
 
   std::string ip =
       MpRpcApplication::GetInstance().GetConfig().Load("rpcserverip");
-  uint16_t port = atoi(
-      MpRpcApplication::GetInstance().GetConfig().Load("rpcserverip").c_str());
+  uint16_t port = atoi(MpRpcApplication::GetInstance()
+                           .GetConfig()
+                           .Load("rpcserverport")
+                           .c_str());
 
   struct sockaddr_in server_addr;
   server_addr.sin_family = AF_INET;
-  server_addr.sin_addr.s_addr = inet_addr(ip.c_str());
   server_addr.sin_port = htons(port);
+  server_addr.sin_addr.s_addr = inet_addr(ip.c_str());
 
   if (-1 ==
       connect(clientfd, (struct sockaddr*)&server_addr, sizeof(server_addr))) {
@@ -84,22 +88,23 @@ void MpRpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     exit(EXIT_FAILURE);
   }
 
-  if (-1 == send(clientfd, &send_rpc_str, send_rpc_str.size(), 0)) {
+  if (-1 == send(clientfd, send_rpc_str.c_str(), send_rpc_str.size(), 0)) {
     std::cout << "send error!" << std::endl;
     close(clientfd);
     return;
   }
   char recv_buf[1024] = {0};
   int recv_size = 0;
-  if (-1 == recv(clientfd, recv_buf, sizeof(recv_buf), 0)) {
+  if (-1 == (recv_size = recv(clientfd, recv_buf, 1024, 0))) {
     std::cout << "recv error!" << std::endl;
     close(clientfd);
     return;
   }
 
-  std::string response_str(recv_buf, 0, recv_size);
+  // std::string response_str(recv_buf, 0, recv_size);
 
-  if (response->ParseFromString(response_str)) {
+  // if (!response->ParseFromString(response_str)) {
+  if (!response->ParseFromArray(recv_buf, recv_size)) {
     std::cout << "parse error" << std::endl;
     close(clientfd);
     return;
